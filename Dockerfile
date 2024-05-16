@@ -14,7 +14,7 @@ RUN npm install
 COPY . /app/
 
 # Construir la aplicación Angular
-RUN npm run build -- --prod
+RUN npm run build
 
 # Exponer el puerto en el que la aplicación Angular se ejecutará
 EXPOSE 80
