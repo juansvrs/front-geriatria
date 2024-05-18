@@ -1,4 +1,4 @@
-version: '3'
+version: '3.8'
 services:
   angular-app:
     build:
@@ -6,6 +6,8 @@ services:
       dockerfile: Dockerfile
     ports:
       - "80:80"
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
     environment:
-      - NODE_ENV=production
-    restart: always
+      - NODE_ENV=development
