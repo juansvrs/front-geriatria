@@ -20,4 +20,6 @@ RUN npm run build
 EXPOSE 80
 
 # Comando para iniciar la aplicación Angular
-CMD ["npm", "start"]
+#CMD ["npm", "start"]
+
+CMD ["ng", "serve", "--host", "0.0.0.0"]
