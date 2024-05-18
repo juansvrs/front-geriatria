@@ -2,16 +2,16 @@
 FROM node:18
 
 # Establecer el directorio de trabajo dentro del contenedor
-WORKDIR /app
+WORKDIR /src/app
 
 # Copiar los archivos necesarios para instalar las dependencias
-COPY package.json package-lock.json /app/
+COPY package.json package-lock.json /src/app/
 
 # Instalar las dependencias
 RUN npm install
 
 # Copiar el resto de los archivos de la aplicación
-COPY . /app/
+COPY . /src/app/
 
 # Construir la aplicación Angular
 RUN npm run build
