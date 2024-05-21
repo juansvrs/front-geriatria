@@ -1,11 +1,10 @@
 {
-    "/api": {
-      "target": "http://34.148.160.13:8082/api",
-      "secure": false,
-      "pathRewrite": {
-        "^/api": ""
-      }
-    }
+  "/api": {
+    "target": "http://34.148.160.13:8082/",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
   }
+}
   
   
