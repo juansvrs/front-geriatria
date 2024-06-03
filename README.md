@@ -1,27 +1,69 @@
 # FRONTGERIATRIA
+Este proyecto fue generado con Angular CLI versión 17.0.10.
+Este proyecto utiliza boostrap 5.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.10.
+## LevantamientoServidor de desarrollo
+Primero que nada es necesario ejecutar "npm install"
+Ejecuta ng serve para un servidor de desarrollo. Navega a http://localhost:4200/. La aplicación se recargará automáticamente si cambias cualquiera de los archivos fuente.
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Creación de código
+Ejecuta "ng generate component component-name" para generar un nuevo componente. También puedes usar ng generate directive|pipe|service|class|guard|interface|enum|module.
 
 ## Build
+Ejecuta "ng build" para construir el proyecto. Los archivos resultantes de la construcción se almacenarán en el directorio dist/.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Configurar proxy para el backend
+Para configurar el host del backend de la aplicacion se realiza desde proxy.conf.json: Se reemplaza " "target": "http://34.148.160.13:8082/" " por la url deseada sea localhost o un servidor. Este seria el endpoint general para el resto de servicios en la aplicacion.
 
-## Running unit tests
+## Estructura general
+```
+front-geriatria
+│  ├─ app
+│  │  ├─ app.component.ts
+│  │  ├─ app.config.ts
+│  │  ├─ app.routes.ts
+│  │  ├─ core
+│  │  │  └─ header
+│  │  ├─ feature
+│  │  │  ├─ actividades
+│  │  │  │  ├─ actividades-agregar
+│  │  │  │  ├─ actividades-agregar-categoria
+│  │  │  │  ├─ actividades.component.ts
+│  │  │  │  └─ service
+│  │  │  │     ├─ actividad.service.ts
+│  │  │  │     ├─ actividad.ts
+│  │  │  │     └─ tipo-actividad
+│  │  │  │        ├─ tipo-actividad.service.ts
+│  │  │  │        └─ tipo-actividad.ts
+│  │  │  ├─ informes
+│  │  │  │  └─ informes.component.ts
+│  │  │  ├─ pacientes
+│  │  │  │  ├─ paciente-actividades
+│  │  │  │  ├─ paciente-agregar
+│  │  │  │  ├─ paciente-item
+│  │  │  │  ├─ pacientes.component.ts
+│  │  │  │  └─ service
+│  │  │  │     ├─ paciente.service.ts
+│  │  │  │     └─ paciente.ts
+│  │  │  ├─ registros
+│  │  │  │  ├─ registro
+│  │  │  │  │  └─ registro.component.ts
+│  │  │  │  └─ service
+│  │  │  │     ├─ registro.service.ts
+│  │  │  │     └─ registro.ts
+│  │  │  └─ resumen
+│  │  └─ shared
+│  │     ├─ alerta-service.ts
+│  │     ├─ paciente-actividad.service.ts
+│  │     └─ paciente-actividad.ts
+│  ├─ assets
+│  ├─ favicon.ico
+│  ├─ index.html
+│  ├─ main.ts
+│  └─ styles.css
+```
+## Más ayuda
+Para obtener más ayuda sobre Angular CLI, usa ng help o visita la página Angular CLI Overview and Command Reference.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

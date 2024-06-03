@@ -28,7 +28,7 @@
                 <button class="btn" (click)="toggleFiltrarNombre()">{{ nombreAscendente ? '↓' : '↑' }}</button>
               </th>
               <th>Edad</th>
-              <th>Ingreso</th>
+              
               <th>Ver</th>  
               <th>Eliminar</th>
             </tr>
@@ -41,7 +41,7 @@
               <td>{{ paciente.idPaciente }}</td>
               <td>{{ paciente.nombre }}</td>
               <td>{{ paciente.edad }}</td>
-              <td>Viernes 23 de enero 2024</td> 
+              
               <td><button class="btn btn-info" [routerLink]="['/paciente', paciente.idPaciente]" >Ver</button></td>
               <td><button class="btn btn-danger" (click)="eliminarPaciente(paciente.idPaciente, paciente.nombre)">Eliminar</button></td>
             </tr>

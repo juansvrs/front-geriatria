@@ -1,5 +1,5 @@
 <div class="container">
-  <h2>Listado de Registros</h2>
+  <h1 class="fs-1">Listado de Registros</h1>
   <div class="form-group">
     <label for="pacienteInput">Buscar Paciente:</label>
     <input type="text" class="form-control" id="pacienteInput" [(ngModel)]="pacienteId" (input)="cargarRegistros()">
@@ -16,7 +16,6 @@
           <th>Paciente</th>
           <th>Actividad</th>
           <th>Estado</th>
-          <th>Comentario</th>
           <th>Fecha</th>
         </tr>
       </thead>
@@ -25,7 +24,6 @@
           <td>{{ registro.idPaciente }}</td> <!-- Aquí mostrar el nombre del paciente -->
           <td>{{ registro.idActividad }}</td> <!-- Aquí mostrar el nombre de la actividad -->
           <td>{{ registro.estado }}</td>
-          <td>{{ registro.detallesRegistro }}</td>
           <td>{{ registro.fecha }}</td>
         </tr>
       </tbody>
