@@ -24,7 +24,7 @@
                 <p class="mb-4"><span class="text-primary font-italic me-1">Actividades</span> Todas
                 </p>                 
                 <div *ngFor="let item of actividadesPaciente">
-                  <p>● {{item.nombre}}</p>
+                  <p>● ID: {{item.idActividad}},  {{item.nombre}}</p>
               </div>
               </div>
               <button [routerLink]="['/paciente/actividades',pacienteId]" class="btn">Editar lista de actividades</button>

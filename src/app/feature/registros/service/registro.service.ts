@@ -53,4 +53,9 @@ export class RegistroService {
     const url = `${this.apiUrl}/paciente/${idPaciente}/fecha/${fecha}`;
     return this.httpClient.get<Registro[]>(url);
   }
+
+  deleteRegistrosAntiguos(): Observable<void> {
+    const url = `${this.apiUrl}/eliminarAntiguos`;
+    return this.httpClient.delete<void>(url);
+  }
 }

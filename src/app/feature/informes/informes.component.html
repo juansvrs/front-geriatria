@@ -8,23 +8,28 @@
     <label for="actividadInput">Buscar Actividad:</label>
     <input type="text" class="form-control" id="actividadInput" [(ngModel)]="actividadId" (input)="cargarRegistros()">
   </div>
-  <button class="btn btn-primary mb-2" (click)="cargarRegistros()">Cargar Registros</button>
+  <div class="btn-group mb-2">
+    <button class="btn btn-primary" (click)="cargarRegistros()">Cargar Registros</button>
+    <button class="btn btn-danger" (click)="eliminarRegistrosAntiguos()">Eliminar registros antiguos</button>
+  </div>
   <div class="table-responsive">
     <table class="table table-striped">
       <thead>
         <tr>
           <th>Paciente</th>
           <th>Actividad</th>
+          <th>Nombre Actividad</th>
           <th>Estado</th>
           <th>Fecha</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let registro of listadoRegistros" [ngClass]="{'registro-realizado': esRegistroRealizado(registro), 'registro-no-realizado': !esRegistroRealizado(registro)}">
-          <td>{{ registro.idPaciente }}</td> <!-- Aquí mostrar el nombre del paciente -->
-          <td>{{ registro.idActividad }}</td> <!-- Aquí mostrar el nombre de la actividad -->
+          <td>{{ registro.idPaciente }}</td>
+          <td>{{ registro.idActividad }}</td>
+          <td>{{ getNombreActividad(registro.idActividad) }}</td>
           <td>{{ registro.estado }}</td>
-          <td>{{ registro.fecha }}</td>
+          <td>{{ registro.fecha | date }}</td>
         </tr>
       </tbody>
     </table>
