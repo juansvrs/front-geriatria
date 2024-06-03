@@ -15,6 +15,9 @@ Ejecuta "ng build" para construir el proyecto. Los archivos resultantes de la co
 ## Configurar proxy para el backend
 Para configurar el host del backend de la aplicacion se realiza desde proxy.conf.json: Se reemplaza " "target": "http://34.148.160.13:8082/" " por la url deseada sea localhost o un servidor. Este seria el endpoint general para el resto de servicios en la aplicacion.
 
+## Levantamiento con DOCKER
+En caso de utilizar Docker como manera de levantar el componente de manera sencilla, este repositorio cuenta con Dockerfile y docker-compose.yml. Ubicarse en la raiz del proyecto y ejecutar "docker compose up -d". Cuando el proceso de instalacion termine consultar "docker ps" para observar el puerto que abrio el docker que en el archivo de configuracion de docker esta definido el puerto 80.
+
 ## Estructura general
 ```
 front-geriatria
@@ -62,6 +65,9 @@ front-geriatria
 │  ├─ main.ts
 │  └─ styles.css
 ```
+
+
+
 ## Más ayuda
 Para obtener más ayuda sobre Angular CLI, usa ng help o visita la página Angular CLI Overview and Command Reference.
 
